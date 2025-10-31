@@ -15,7 +15,7 @@
     replace: 0.0.0.0
 
 - name: Enable and start mongod service
-  ansible.builtin.service:
+  ansible.builtin.systemd_service:
     name: mongod
     state: restarted
     enabled: yes
