@@ -14,3 +14,4 @@
 
 - name: Connect to schema
   ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop
+
