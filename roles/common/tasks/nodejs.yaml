@@ -1,11 +1,3 @@
-
-#
-#    func_schema_setup
-#
-#    func_systemd_setup
-#
-#  }
-
 - name: Disable Nodejs and enable nodejs version 20
   ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:20
 
