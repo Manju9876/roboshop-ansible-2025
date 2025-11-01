@@ -1,0 +1,16 @@
+- name: Load Nodejs
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: nodejs.yaml
+
+- name: Copy mongod repo from mongo.repo
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+- name: Install Mongodb
+  ansible.builtin.dnf:
+    name: mongodb-mongosh
+
+- name: Connect to schema
+  ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop

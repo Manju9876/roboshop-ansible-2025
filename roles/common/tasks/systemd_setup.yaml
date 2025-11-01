@@ -1,0 +1,30 @@
+#
+#  func_systemd_setup(){
+#
+#    func_print_head "Copy service file"
+#    cp ${script_path}/${component}.service /etc/systemd/system/${component}.service &>>${log_file}
+#    func_status_check $?
+#
+#    func_print_head "Daemon reload"
+#    systemctl daemon-reload &>>${log_file}
+#    func_status_check $?
+#
+#    func_print_head "Start ${component} service"
+#    systemctl enable ${component} &>>${log_file}
+#    systemctl restart ${component} &>>${log_file}
+#    func_status_check $?
+#
+#  }
+
+- name: Copy service file
+  ansible.builtin.copy:
+    src: "{{ component_name }}.service"
+    dest: /etc/systemd/system/{{ component_name }}.service
+
+- name: Daemon reload and start the service
+  ansible.builtin.systemd.service:
+    name: "{{ component_name }}"
+    daemon_reload: yes
+    state: restarted
+    enabled: yes
+
