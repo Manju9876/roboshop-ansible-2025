@@ -17,6 +17,6 @@
     name: redis
     daemon_reload: yes
     state: restarted
-    enable: yes
+    enabled: yes
 
 
