@@ -5,7 +5,6 @@
   ansible.builtin.dnf:
     name: nodejs
     state: installed
-    enabled: yes
 
 - name: Include app_prereq task list in play
   ansible.builtin.include_tasks:
