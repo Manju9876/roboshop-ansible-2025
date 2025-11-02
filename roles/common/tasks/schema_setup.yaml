@@ -22,5 +22,5 @@
     name: mongodb-mongosh
     state: installed
 
-- name: Connect to schema
+- name: Load Master data
   ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop
