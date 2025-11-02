@@ -23,4 +23,4 @@
     state: installed
 
 - name: Connect to schema
-  ansible.builtin.shell: mongosh --host {{ component_name }}-dev.devopsbymanju.shop
+  ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop
