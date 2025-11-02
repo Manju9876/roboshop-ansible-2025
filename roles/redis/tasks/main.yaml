@@ -6,11 +6,17 @@
     name: redis
     state: installed
 
-- name: Change location in redis conf file
+- name: Update redis conf file listen address
   ansible.builtin.replace:
     path: /etc/redis/redis.conf
-    regexp: 127.0.0.1
-    replace: 0.0.0.0
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Update redis config file protected mode
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: 'protected-mode yes'
+    replace: 'protected-mode no'
 
 - name: Enable and start redis
   ansible.builtin.systemd:
