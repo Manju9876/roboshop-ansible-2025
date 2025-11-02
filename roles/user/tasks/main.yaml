@@ -3,15 +3,15 @@
     name: common
     tasks_from: nodejs.yaml
 
-- name: Copy mongod repo from catalogue files
-  ansible.builtin.copy:
-    src: mongo.repo
-    dest: /etc/yum.repos.d/mongo.repo
+#- name: Copy service file form user files
+#  ansible.builtin.copy:
+#    src: user.service
+#    dest: /etc/systemd/system/user.service
 
-- name: Install mongod
-  ansible.builtin.dnf:
-    name: mongodb-mongosh
-    state: installed
-
-- name: Load Master data schema
-  ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop </app/db/master-data.js
+#- name: Install mongod
+#  ansible.builtin.dnf:
+#    name: mongodb-mongosh
+#    state: installed
+#
+#- name: Load Master data schema
+#  ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop </app/db/master-data.js
