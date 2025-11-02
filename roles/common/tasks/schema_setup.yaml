@@ -13,7 +13,7 @@
 #fi
 
 - name: Copy mongod repo from catalogue files
-  ansible.biultin.copy:
+  ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
