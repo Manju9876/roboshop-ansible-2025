@@ -12,6 +12,8 @@
 
 - name: Install Nodejs dependencies
   ansible.builtin.shell: npm install
+  args:
+    chdir: /app
 
 - name: Include schema setup tasks list in play
   ansible.builtin.include_tasks:
