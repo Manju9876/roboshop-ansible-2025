@@ -22,5 +22,5 @@
     name: mongodb-mongosh
     state: installed
 
-- name: Load Master data
-  ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop
+- name: Load Master data schema
+  ansible.builtin.shell: mongosh --host mongodb-dev.devopsbymanju.shop </app/db/master-data.js
