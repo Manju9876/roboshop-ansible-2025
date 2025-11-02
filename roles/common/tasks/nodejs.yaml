@@ -15,10 +15,6 @@
   args:
     chdir: /app
 
-#- name: Include schema setup tasks list in play
-#  ansible.builtin.include_tasks:
-#    file: schema_setup.yaml
-
 - name: Include systemd setup tasks list in play
   ansible.builtin.include_tasks:
     file: systemd_setup.yaml
