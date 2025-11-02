@@ -18,9 +18,9 @@
     dest: /etc/yum.repos.d/mongo.repo
 
 - name: Install mongod
-  ansible.biultin.dnf:
+  ansible.builtin.dnf:
     name: mongodb-mongosh
     state: installed
 
 - name: Connect to schema
-  ansible.biultin.shell: mongosh --host {{ component_name }}-dev.devopsbymanju.shop
+  ansible.builtin.shell: mongosh --host {{ component_name }}-dev.devopsbymanju.shop
