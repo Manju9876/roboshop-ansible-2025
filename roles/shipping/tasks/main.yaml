@@ -14,5 +14,5 @@
 - name: Load user creation
   ansible.builtin.shell: mysql -h mysql-dev.devopsbymanju.shop -uroot -pRoboShop@1 < /app/db/app-user.sql
 
-- name: Load schema
+- name: Load master data
   ansible.builtin.shell: mysql -h mysql-dev.devopsbymanju.shop -uroot -pRoboShop@1 < /app/db/master-data.sql
