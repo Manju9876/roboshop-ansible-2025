@@ -8,12 +8,14 @@
     name: rabbitmq-server
     state: installed
 
-- name: Add user and password
-  ansible.builtin.shell: rabbitmqctl add_user roboshop roboshop123 ; rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
-
 - name: Enable and start rabbitmq
   ansible.builtin.systemd:
     name: rabbitmq-server
     state: restarted
     enabled: yes
+
+- name: Add user and password
+  ansible.builtin.shell: rabbitmqctl add_user roboshop roboshop123 ; rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+
+
 
