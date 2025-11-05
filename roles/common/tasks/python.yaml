@@ -17,4 +17,4 @@
 
 - name: Include systemd setup tasks in the play
   ansible.builtin.include_tasks:
-    file: systemd.setup.yaml
+    file: systemd_setup.yaml
