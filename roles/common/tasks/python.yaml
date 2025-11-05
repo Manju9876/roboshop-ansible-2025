@@ -10,7 +10,7 @@
   ansible.builtin.include_tasks:
     file: app_prereq.yaml
 
-- name: Download python dependencies
+- name: Install python dependencies
   ansible.builtin.shell: pip3 install -r requirements.txt
   args:
     chdir: /app
