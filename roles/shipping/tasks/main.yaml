@@ -1,7 +1,13 @@
 - name: Load Maven
-  ansible.builtin.include.role:
+  ansible.builtin.include_role:
     name: common
-    tasks_from: maven
+    tasks_from: maven.yaml
+
+- name: Load Nodejs
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: nodejs.yaml
+
 
 - name: Install mysql client
   ansible.builtin.dnf:
