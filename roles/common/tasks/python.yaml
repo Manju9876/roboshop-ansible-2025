@@ -7,7 +7,7 @@
     state: installed
 
 - name: Include app_prereq tasks in the play
-  ansible.builtin.tasks:
+  ansible.builtin.include_tasks:
     file: app_prereq.yaml
 
 - name: Download python dependencies
@@ -16,5 +16,5 @@
     chdir: /app
 
 - name: Include systemd setup tasks in the play
-  ansible.builtin.tasks:
+  ansible.builtin.include_tasks:
     file: systemd.setup.yaml
