@@ -1,5 +1,5 @@
 - name: Load Maven
-  ansible.builtin.include.roles:
+  ansible.builtin.include.role:
     name: common
     tasks_from: maven.yaml
 
