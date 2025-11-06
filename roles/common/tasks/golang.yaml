@@ -1,0 +1,19 @@
+- name: install golang
+  ansible.builtin.dnf:
+    name: golang
+    state: installed
+
+- name: Include app_prereq task in the paly
+  ansible.builtin.include_tasks:
+    name: common
+    tasks: app_prereq.yaml
+
+- name: Install golang dependencies
+  ansible.builtin.shell: go mod init dispatch ; go get ; go build
+  args:
+    chdir: /app
+
+- name: Include systemd_setup task in the play
+  ansible.builtin.include_tasks:
+    name: common
+    tasks: systemd_setup.yaml
