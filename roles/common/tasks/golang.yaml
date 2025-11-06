@@ -3,10 +3,9 @@
     name: golang
     state: installed
 
-- name: Include app_prereq task in the paly
+- name: Include app_prereq task in the play
   ansible.builtin.include_tasks:
-    name: common
-    tasks: app_prereq.yaml
+    file: app_prereq.yaml
 
 - name: Install golang dependencies
   ansible.builtin.shell: go mod init dispatch ; go get ; go build
