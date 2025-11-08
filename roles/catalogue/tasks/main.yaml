@@ -4,7 +4,7 @@
     tasks_from: nodejs.yaml
 
 - name: Copy mongod repo from catalogue files
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
