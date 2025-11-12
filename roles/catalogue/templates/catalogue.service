@@ -5,9 +5,9 @@ Description = Catalogue Service
 User=roboshop
 Environment=MONGO=true
 Environment=MONGO_URL="mongodb://mongodb-{{ env }}.devopsbymanju.shop:27017/catalogue"
-Environment=PORT=8081
+#Environment=PORT=8081
 ExecStart=/bin/node /app/server.js
-Restart=always
+#Restart=always
 SyslogIdentifier=catalogue
 
 [Install]
