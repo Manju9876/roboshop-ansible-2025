@@ -26,6 +26,10 @@ all:
 		-e ansible_user=ec2-user -e ansible_password=DevOps321 \
 		-e env=$(env) -e component_name=user roboshop.yaml
 
+	ansible-playbook -i cart-dev.devopsbymanju.shop, \
+		-e ansible_user=ec2-user -e ansible_password=DevOps321 \
+		-e env=$(env) -e component_name=cart roboshop.yaml
+
 	ansible-playbook -i mysql-dev.devopsbymanju.shop, \
 		-e ansible_user=ec2-user -e ansible_password=DevOps321 \
 		-e env=$(env) -e component_name=mysql roboshop.yaml
