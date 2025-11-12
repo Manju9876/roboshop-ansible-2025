@@ -15,7 +15,7 @@ all:
     	-e env=$(env) -e component_name=mongodb roboshop.yaml
 
 	ansible-playbook -i catalogue-dev.devopsbymanju.shop, \
-		-e ansible_user=ec2-user -e ansible_password=DevOps321
+		-e ansible_user=ec2-user -e ansible_password=DevOps321 \
 		-e env=$(env) -e component_name=catalogue roboshop.yaml
 
 	ansible-playbook -i redis-dev.devopsbymanju.shop, \
