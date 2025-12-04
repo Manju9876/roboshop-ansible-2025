@@ -3,8 +3,8 @@ Description = Dispatch Service
 [Service]
 User=roboshop
 Environment=AMQP_HOST="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:AMQP_HOST token={{vault_token}} url=http://3.239.5.196:8200') }}"
-Environment=AMQP_USER=roboshop
-Environment=AMQP_PASS=roboshop123
+Environment=AMQP_USER="{{ lookup('community.hashi_vault.hashi_vault', 'secret=rabbitmq_credentials/data/{{component_name}}:AMQP_USER token={{vault_token}} url=http://3.239.5.196:8200') }}"
+Environment=AMQP_PASS="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:AMQP_PASS token={{vault_token}} url=http://3.239.5.196:8200') }}"
 ExecStart=/app/dispatch
 SyslogIdentifier=dispatch
 
