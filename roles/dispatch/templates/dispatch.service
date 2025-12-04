@@ -2,7 +2,7 @@
 Description = Dispatch Service
 [Service]
 User=roboshop
-Environment=AMQP_HOST=rabbitmq-{{ env }}.devopsbymanju.shop
+Environment=AMQP_HOST="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:AMQP_HOST token={{vault_token}} url=http://3.239.5.196:8200') }}"
 Environment=AMQP_USER=roboshop
 Environment=AMQP_PASS=roboshop123
 ExecStart=/app/dispatch
