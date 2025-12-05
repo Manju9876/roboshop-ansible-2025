@@ -1,0 +1,4 @@
+secrets:
+  - REDIS_HOST
+  - CATALOGUE_HOST
+  - CATALOGUE_PORT
