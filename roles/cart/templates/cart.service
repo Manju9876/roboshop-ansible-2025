@@ -7,7 +7,7 @@ Environment={{ item }}="{{ lookup(
     'community.hashi_vault.hashi_vault',
     'secret=roboshop-dev-secrets/data/' ~ component_name ~ ':' ~ item
     ~ ' token=' ~ vault_token
-    ~ ' url=http://http://100.28.226.211/:8200'
+    ~ ' url=http://http://100.28.226.211:8200'
 ) }}"
 {% endfor %}
 #Environment=REDIS_HOST="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:REDIS_HOST token={{vault_token}} url=http://44.192.72.161:8200') }}"
