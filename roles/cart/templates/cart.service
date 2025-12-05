@@ -15,6 +15,5 @@ Environment={{ item }}="{{ lookup(
 #Environment=CATALOGUE_PORT="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:CATALOGUE_PORT token={{vault_token}} url=http://44.192.72.161:8200') }}"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
-
 [Install]
 WantedBy=multi-user.target
