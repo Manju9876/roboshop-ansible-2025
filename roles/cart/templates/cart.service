@@ -2,16 +2,10 @@
 Description = Cart Service
 [Service]
 User=roboshop
-{% for item in secrets %}
-Environment={{ item }}="{{ lookup(
-    'community.hashi_vault.hashi_vault',
-    'secret=roboshop-dev-secrets/data/' ~ component_name ~ ':' ~ item
-    ~ ' token=' ~ vault_token
-    ~ ' url=http://100.28.226.211:8200'
-) }}"
-{% endfor %}
+Environment=REDIS_HOST="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:REDIS_HOST token={{vault_token}} url=http://100.28.226.211:8200') }}"
+Environment=CATALOGUE_HOST="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:CATALOGUE_HOST token={{vault_token}} url=http://100.28.226.211:8200') }}"
+Environment=CATALOGUE_PORT="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-dev-secrets/data/{{component_name}}:CATALOGUE_PORT token={{vault_token}} url=http://100.28.226.211:8200') }}"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
 [Install]
-WantedBy=multi-user.targets
-
+WantedBy=multi-user.target
