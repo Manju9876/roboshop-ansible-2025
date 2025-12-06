@@ -1,0 +1,3 @@
+secrets:
+  - CART_ENDPOINT
+  - DB_HOST

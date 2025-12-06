@@ -3,8 +3,11 @@ Description=Shipping Service
 
 [Service]
 User=roboshop
-Environment=CART_ENDPOINT=cart-{{ env }}.devopsbymanju.shop:8080
-Environment=DB_HOST=mysql-{{ env }}.devopsbymanju.shop
+
+{% for item in secrets %}
+Environment={{ item }}="{{ lookup('community.hashi_vault.hashi_vault','secret=roboshop-' ~ env ~ '-secrets/data/' ~ component_name ~ ':' ~ item ~ ' token=' ~ vault_token ~ ' url=http://13.221.206.120:8200') }}"
+{% endfor %}
+
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
