@@ -1,0 +1,3 @@
+secrets:
+  - REDIS_URL
+  - MONGO_URL

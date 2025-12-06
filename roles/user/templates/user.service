@@ -3,8 +3,9 @@ Description = User Service
 [Service]
 User=roboshop
 Environment=MONGO=true
-Environment=REDIS_URL='redis://redis-{{ env }}.devopsbymanju.shop:6379'
-Environment=MONGO_URL="mongodb://mongodb-{{ env }}.devopsbymanju.shop:27017/users"
+{% for item in secrets %}
+Environment={{ item }}="{{ lookup('community.hashi_vault.hashi_vault','secret=roboshop-' ~ env ~ '-secrets/data/' ~ component_name ~ ':' ~ item ~ ' token=' ~ vault_token ~ ' url=http://18.207.238.2:8200') }}"
+{% endfor %}
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=user
 
