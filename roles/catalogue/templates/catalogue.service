@@ -4,7 +4,7 @@ Description = Catalogue Service
 [Service]
 User=roboshop
 Environment=MONGO=true
-Environment=MONGO_URL="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-{{env}}-secrets/data/{{component_name}}:MONGO_URL token={{vault_token}} url=http://18.207.238.2:8200') }}"
+Environment=MONGO_URL="{{ lookup('community.hashi_vault.hashi_vault', 'secret=roboshop-{{env}}-secrets/data/{{component_name}}:MONGO_URL token={{vault_token}} url=http://vault.devopsbymanju.shop:8200') }}"
 
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue

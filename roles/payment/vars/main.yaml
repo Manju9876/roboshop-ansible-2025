@@ -1,0 +1,6 @@
+secrets:
+  - CART_HOST
+  - CART_PORT
+  - USER_HOST
+  - USER_PORT
+  - AMQP_HOST
