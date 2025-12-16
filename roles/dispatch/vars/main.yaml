@@ -1,0 +1,4 @@
+secrets:
+  - AMQP_HOST
+  - AMQP_USER
+  - AMQP_PASS
