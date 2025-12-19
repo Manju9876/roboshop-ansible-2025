@@ -1,3 +1,6 @@
 secrets:
   - CART_ENDPOINT
   - DB_HOST
+
+service_username: roboshop
+execstart_command: /bin/java -jar /app/shipping.jar

@@ -2,3 +2,6 @@ secrets:
   - AMQP_HOST
   - AMQP_USER
   - AMQP_PASS
+
+service_username: roboshop
+execstart_command: /app/dispatch

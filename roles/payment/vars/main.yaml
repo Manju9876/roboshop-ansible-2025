@@ -4,3 +4,6 @@ secrets:
   - USER_HOST
   - USER_PORT
   - AMQP_HOST
+
+service_username: root
+execstart_command: /usr/local/bin/uwsgi --ini payment.ini
