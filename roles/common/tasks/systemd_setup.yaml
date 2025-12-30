@@ -1,6 +1,6 @@
 - name: Copy service file
   ansible.builtin.template:
-    src: "{{ component_name }}.service"
+    src: common.service
     dest: /etc/systemd/system/{{ component_name }}.service
 
 - name: Daemon reload and start the service

@@ -1,5 +1,5 @@
 [Unit]
-Description = {{ component_name | tittle }} Service
+Description = {{ component_name | title }} Service
 
 [Service]
 User={{ service_username }}
