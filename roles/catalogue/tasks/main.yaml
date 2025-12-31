@@ -17,3 +17,4 @@
   ansible.builtin.shell: mongosh --host mongodb-{{ env }}.devopsbymanju.shop </app/db/master-data.js
 
 
+
