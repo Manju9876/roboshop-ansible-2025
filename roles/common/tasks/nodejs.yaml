@@ -19,4 +19,25 @@
   ansible.builtin.include_tasks:
     file: systemd_setup.yaml
 
+#- name: Disable Nodejs and enable Nodejs 20
+#  ansible.builtin.shell: dnf module disable nodejs -y ;dnf module enable nodejs:20 -y
+#
+#- name: Install NodeJS
+#  ansible.builtin.dnf:
+#    name: nodejs
+#    state: installed
+#
+#- name: Include artifact_download
+#  ansible.builtin.include_tasks:
+#    file: artifact_download.yml
+#
+#- name: Install NodeJs Dependencies
+#  ansible.builtin.shell: npm install
+#  args:
+#    chdir: /app
+#
+#- name: Include systemd_setup
+#  ansible.builtin.include_tasks:
+#    file: systemd_setup.yml
+
 
