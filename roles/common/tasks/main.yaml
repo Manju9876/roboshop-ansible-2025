@@ -1,10 +1,8 @@
 - name: Setup prompt
   ansible.builtin.shell: set-prompt {{ component_name }}
 
-- name: install hashi corp
-  ansible.builtin.shell: python3.11 -m pip  install hvac
-
-
+#- name: install hashi corp
+#  ansible.builtin.shell: python3.11 -m pip  install hvac
 
 #- name: install vault and ansible
 #  ansible.builtin.shell: python3.11 -m pip install ansible hvac
