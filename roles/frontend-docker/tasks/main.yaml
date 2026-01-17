@@ -7,7 +7,7 @@
 - name: Load frontend secrets from Vault
   ansible.builtin.set_fact:
     vault_secrets: "{{ lookup('community.hashi_vault.hashi_vault',
-      'secret=roboshop-dev-docker/data/frontend-docker token={{ vault_token }} url=http://vault.devopsbymanju.shop:8200') }}"
+      'secret=roboshop-dev-docker-secrets/data/frontend-docker token={{ vault_token }} url=http://vault.devopsbymanju.shop:8200') }}"
 
 - name: Run frontend docker
   community.docker.docker_container:
