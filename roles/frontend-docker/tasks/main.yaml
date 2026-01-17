@@ -13,6 +13,6 @@
   community.docker.docker_container:
     name: frontend
     image: public.ecr.aws/w8x4g9h7/roboshop-v3/frontend
-    state: restarted
+    state: started
     recreate: true
     env: "{{ secrets }}"
