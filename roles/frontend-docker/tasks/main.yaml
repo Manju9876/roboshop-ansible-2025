@@ -15,4 +15,6 @@
     image: public.ecr.aws/w8x4g9h7/roboshop-v3/frontend
     state: started
     recreate: true
+    ports:
+      - "80/80"
     env: "{{ secrets }}"
