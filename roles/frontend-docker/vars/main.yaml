@@ -1,2 +1,11 @@
 secrets:
-    -
+  CATALOGUE_HOST: "{{ vault_secrets.CATALOGUE_HOST }}"
+  CATALOGUE_PORT: "{{ vault_secrets.CATALOGUE_PORT }}"
+  USER_HOST: "{{ vault_secrets.USER_HOST }}"
+  USER_PORT: "{{ vault_secrets.USER_PORT }}"
+  CART_HOST: "{{ vault_secrets.CART_HOST }}"
+  CART_PORT: "{{ vault_secrets.CART_PORT }}"
+  SHIPPING_HOST: "{{ vault_secrets.SHIPPING_HOST }}"
+  SHIPPING_PORT: "{{ vault_secrets.SHIPPING_PORT }}"
+  PAYMENT_HOST: "{{ vault_secrets.PAYMENT_HOST }}"
+  PAYMENT_PORT: "{{ vault_secrets.PAYMENT_PORT }}"

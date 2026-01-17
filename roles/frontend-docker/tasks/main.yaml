@@ -3,13 +3,16 @@
     name: common
     tasks_from: docker.yaml
 
+
+- name: Load frontend secrets from Vault
+  ansible.builtin.set_fact:
+    vault_secrets: "{{ lookup('community.hashi_vault.hashi_vault',
+      'secret=roboshop/dev/frontend token={{ vault_token }} url=http://vault.devopsbymanju.shop:8200') }}"
+
 - name: Run frontend docker
   community.docker.docker_container:
     name: frontend
     image: public.ecr.aws/w8x4g9h7/roboshop-v3/frontend
     state: restarted
     recreate: true
-    exposed_ports:
-      - 6379
-    volumes_from:
-      - mydata
+    env: "{{ secrets }}"
