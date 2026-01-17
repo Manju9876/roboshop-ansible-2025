@@ -16,5 +16,5 @@
     state: started
     recreate: true
     ports:
-      - "80/80"
+      - "80:80"
     env: "{{ secrets }}"
