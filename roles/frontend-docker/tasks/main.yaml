@@ -4,8 +4,6 @@
     tasks_from: docker.yaml
 
 
-
-
 - name: Load frontend secrets from Vault
   ansible.builtin.set_fact:
     vault_secrets: "{{ lookup('community.hashi_vault.hashi_vault',
