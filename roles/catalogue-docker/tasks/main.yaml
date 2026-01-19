@@ -2,3 +2,12 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: docker.yaml
+  vars:
+    app_port: 8080
+
+
+
+
+
+
+  docker run -e DB_TYPE=mongo -e APP_GIT_URL=https://github.com/roboshop-devops-project-v3/catalogue -e DB_HOST=mongo-ip -e SCHEMA_FILE=db/master-data.js public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load

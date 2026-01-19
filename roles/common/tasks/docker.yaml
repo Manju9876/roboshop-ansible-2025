@@ -19,4 +19,25 @@
     name: docker
     state: restarted
 
+- name: Load secrets from Vault
+  ansible.builtin.set_fact:
+    component: "{{ component_name | regex_replace('-docker', '') }}"
+    vault_secrets: >-
+      {{ lookup(
+        'community.hashi_vault.hashi_vault',
+        'secret=roboshop-' ~ env ~ '-secrets/data/' ~
+        (component_name | regex_replace("-docker", "")) ~
+        ' token=' ~ vault_token ~
+        ' url=http://vault.devopsbymanju.shop:8200'
+      ).data.data }}
+
+- name: Run  docker container
+  community.docker.docker_container:
+    name: frontend
+    image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ component }}
+    state: started
+    recreate: true
+    ports:
+      - "{{ app_port }}:{{ app_port }}"
+    env: "{{ secrets }}"
 
