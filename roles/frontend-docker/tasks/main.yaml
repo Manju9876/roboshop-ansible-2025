@@ -2,16 +2,3 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: docker.yaml
-
-
-- name: Run Docker image
-  community.docker.docker_container:
-    name: myredis
-    image: redis
-    command: redis-server --appendonly yes
-    state: present
-    recreate: true
-    exposed_ports:
-      - 6379
-    volumes_from:
-      - mydata
