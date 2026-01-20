@@ -1,0 +1,4 @@
+secrets:
+  REDIS_URL: "{{ vault_secrets.REDIS_URL }}"
+  MONGO_URL: "{{ vault_secrets.MONGO_URL }}"
+  MONGO: "{{ vault_secrets.MONGO }}"
