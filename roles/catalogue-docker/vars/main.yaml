@@ -1,0 +1,8 @@
+secrets:
+  MONGO: "{{ vault_secrets.MONGO }}"
+  MONGO_URL: "{{ vault_secrets.MONG0_URL }}"
+
+schema_secrets:
+  APP_GIT_URL: "{{ vault_secrets.APP_GIT_URL }}"
+  DB_HOST: "{{ vault_secrets.DB_HOST }}"
+  SCHEMA_FILE: "{{ vault_secrets.SCHEMA_FILE }}"

@@ -33,9 +33,9 @@
 
 - name: Run  docker container
   community.docker.docker_container:
-    name: frontend
+    name: "{{ component }}"
     image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ component }}
-    state: started
+    state: present
     recreate: true
     ports:
       - "{{ app_port }}:{{ app_port }}"
