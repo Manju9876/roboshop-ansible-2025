@@ -1,0 +1,4 @@
+secrets:
+  CATALOGUE_HOST: "{{ vault_secrets.CATALOGUE_HOST }}"
+  CATALOGUE_PORT: "{{ vault_secrets.CATALOGUE_PORT }}"
+  REDIS_HOST: "{{ vault_secrets.REDIS_HOST }}"
