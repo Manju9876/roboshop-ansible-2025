@@ -1,3 +1,8 @@
 secrets:
   CART_ENDPOINT: "{{ vault_secrets.CART_ENDPOINT }}"
   DB_HOST: "{{ vault_secrets.DB_HOST }}"
+
+app_user_secrets:
+
+
+

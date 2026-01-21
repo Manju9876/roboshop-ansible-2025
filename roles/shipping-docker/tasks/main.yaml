@@ -2,3 +2,12 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: docker.yaml
+
+- name: Create App user in database
+  community.docker.docker_container:
+    name: Database_App_user
+    image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+    state: present
+    recreate: true
+    env: "{{ app_user_secrets }}"
+
