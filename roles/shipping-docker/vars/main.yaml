@@ -3,6 +3,25 @@ secrets:
   DB_HOST: "{{ vault_secrets.DB_HOST }}"
 
 app_user_secrets:
+  APP_GIT_URL: "{{ vault_secrets.CART_ENDPOINT }}"
+  DB_HOST: "{{ vault_secrets.DB_HOST }}"
+  DB_USER: "{{ vault_secrets.DB_USER }}"
+  DB_PASS: "{{ vault_secrets.DB_PASS }}"
+  SCHEMA_FILE: "{{ vault_secrets.SCHEMA_FILE.app_user }}"
+
+schema_secrets:
+  APP_GIT_URL: "{{ vault_secrets.CART_ENDPOINT }}"
+  DB_HOST: "{{ vault_secrets.DB_HOST }}"
+  DB_USER: "{{ vault_secrets.DB_USER }}"
+  DB_PASS: "{{ vault_secrets.DB_PASS }}"
+  SCHEMA_FILE: "{{ vault_secrets.SCHEMA_FILE.schema }}"
+
+master_data_secrets:
+  APP_GIT_URL: "{{ vault_secrets.CART_ENDPOINT }}"
+  DB_HOST: "{{ vault_secrets.DB_HOST }}"
+  DB_USER: "{{ vault_secrets.DB_USER }}"
+  DB_PASS: "{{ vault_secrets.DB_PASS }}"
+  SCHEMA_FILE: "{{ vault_secrets.SCHEMA_FILE.master_data }}"
 
 
 

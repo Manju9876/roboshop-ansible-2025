@@ -11,3 +11,18 @@
     recreate: true
     env: "{{ app_user_secrets }}"
 
+- name: Create Schema
+  community.docker.docker_container:
+    name: Database_Schema
+    image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+    state: present
+    recreate: true
+    env: "{{ schema_secrets }}"
+
+- name:
+  community.docker.docker_container:
+    name: Database_Master_Data
+    image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+    state: present
+    recreate: true
+    env: "{{ master_data_secrets }}"
