@@ -1,0 +1,8 @@
+secrets:
+  CART_HOST: "{{ vault_secrets.CART_HOST }}"
+  CART_PORT: "{{ vault_secrets.CART_PORT }}"
+  USER_HOST: "{{ vault_secrets.USER_HOST }}"
+  USER_PORT: "{{ vault_secrets.USER_PORT }}"
+  AMQP_HOST: "{{ vault_secrets.AMQP_HOST }}"
+  AMQP_USER: "{{ vault_secrets.AMQP_USER }}"
+  AMQP_PASS: "{{ vault_secrets.AMQP_PASS }}"
