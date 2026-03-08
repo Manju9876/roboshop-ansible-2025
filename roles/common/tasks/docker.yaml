@@ -28,7 +28,7 @@
         'secret=roboshop-' ~ env ~ '-secrets/data/' ~
         (component_name | regex_replace("-docker", "")) ~
         ' token=' ~ vault_token ~
-        ' url=http://vault.devopsbymanju.shop:8200'
+        ' url=http://vault.devopsmanju.shop:8200'
       ).data.data }}
 
 - name: Run  docker container

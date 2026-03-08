@@ -11,9 +11,9 @@ Environment={{ item }}="{{ lookup('community.hashi_vault.hashi_vault','secret=ro
 
 
 
-        location /api/user/ { proxy_pass http://user-{{ env }}.devopsbymanju.shop:8080/; }
-        location /api/cart/ { proxy_pass http://cart-{{ env }}.devopsbymanju.shop:8080/; }
-        location /api/shipping/ { proxy_pass http://shipping-{{ env }}.devopsbymanju.shop:8080/; }
-        location /api/payment/ { proxy_pass http://payment-{{ env }}.devopsbymanju.shop:8080/; }
+        location /api/user/ { proxy_pass http://user-{{ env }}.devopsmanju.shop:8080/; }
+        location /api/cart/ { proxy_pass http://cart-{{ env }}.devopsmanju.shop:8080/; }
+        location /api/shipping/ { proxy_pass http://shipping-{{ env }}.devopsmanju.shop:8080/; }
+        location /api/payment/ { proxy_pass http://payment-{{ env }}.devopsmanju.shop:8080/; }
 
         
